@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.autism">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/ic"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Autism"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Custom_view_questions_result"
+            android:exported="false" />
+        <activity
+            android:name=".Questions_Result"
+            android:exported="false" />
+        <activity
+            android:name=".chatbot"
+            android:exported="false" />
+        <activity
+            android:name=".viewassesment_report"
+            android:exported="false" />
+        <activity
+            android:name=".sendcomplaint"
+            android:exported="false" />
+        <activity
+            android:name=".custom3"
+            android:exported="false" />
+        <activity android:name=".viewguidance" />
+        <activity
+            android:name=".custom2"
+            android:exported="false" />
+        <activity android:name=".viewtips" />
+        <activity
+            android:name=".home"
+            android:exported="false" />
+        <activity
+            android:name=".ViewReply"
+            android:exported="false" />
+        <activity
+            android:name=".Feedback"
+            android:exported="false" />
+        <activity
+            android:name=".Interaction"
+            android:exported="false" />
+        <activity
+            android:name=".studentRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".StudyMaterial"
+            android:exported="false" />
+        <activity
+            android:name=".MedicalReport"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".Test"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

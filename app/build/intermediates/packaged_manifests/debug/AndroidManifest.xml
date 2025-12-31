@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.autism"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="32" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@drawable/ic"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/ic"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/Theme.Autism"
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name="com.example.autism.Custom_view_questions_result"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.Questions_Result"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.chatbot"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.viewassesment_report"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.sendcomplaint"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.custom3"
+            android:exported="false" />
+        <activity android:name="com.example.autism.viewguidance" />
+        <activity
+            android:name="com.example.autism.custom2"
+            android:exported="false" />
+        <activity android:name="com.example.autism.viewtips" />
+        <activity
+            android:name="com.example.autism.home"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.ViewReply"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.Feedback"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.Interaction"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.studentRegistration"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.StudyMaterial"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.MedicalReport"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.Login"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.Test"
+            android:exported="false" />
+        <activity
+            android:name="com.example.autism.MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.example.autism.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>
