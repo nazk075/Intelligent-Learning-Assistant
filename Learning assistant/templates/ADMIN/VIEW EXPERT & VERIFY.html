@@ -1,0 +1,57 @@
+{% extends 'ADMIN/adminindes.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/viewexpert_search#about">
+  <table id="customers">
+    <tr>
+      <td colspan="10"><label>
+      NAME
+              <label>
+        <input type="text" name="textfield" />
+        </label>
+      <input type="submit" name="Submit2" value="SEARCH" />
+      </label></td>
+    </tr>
+    <tr>
+      <td width="141"><div align="center">SINo</div></td>
+      <td width="182"><div align="center">NAME</div></td>
+              <td width="155"><div align="center">PROOF</div></td>
+      <td width="113"><div align="center">PHONE NO </div></td>
+      <td width="90"><div align="center">ADDRESS</div></td>
+      <td width="119"><div align="center">EXPERIENCE</div></td>
+      <td width="72"><div align="center">EMAIL</div></td>
+      <td width="72"><div align="center">DOB</div></td>
+      <td width="72"><div align="center">GENDER</div></td>
+      <td width="117"><div align="center"></div></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+     <td>{{ forloop.counter }}</td>
+      <td>{{ i.name }}</td>
+
+
+      <td>{{ i.proof}}</td>
+      <td>{{ i.phone_no}}</td>
+      <td>{{ i.place}}</td>
+      <td>{{ i.experience}}</td>
+      <td>{{ i.mail_id}}</td>
+      <td>{{ i.DOB}}&nbsp;</td>
+      <td>{{ i.gender}}</td>
+
+        {% if i.LOGIN.type == 'pending' %}
+      <td><label>
+          <a href="accept_expert/{{ i.LOGIN.id }}">ACCEPT</a>
+          <a href="reject_expert/{{ i.LOGIN.id }}">REJECT</a>
+      </label></td>
+    {% elif i.LOGIN.type == 'reject' %}
+    <td>Reject</td>
+    {% else %}
+    <td>Accept</td>
+    {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

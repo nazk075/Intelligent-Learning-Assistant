@@ -1,0 +1,88 @@
+{% extends 'EXPERT/expertindex.html' %}
+{% block body %}
+
+<body>
+<form action="/addmatrialcode" method="post" enctype="multipart/form-data" name="form1" id="form1">
+
+
+
+  <table id="customers">
+    <tr>
+    <td colspan="2" align="center"><b>Video Analysis</b></td>
+</tr>
+      <tr>
+          <td>Video</td>
+          <td>Like</td>
+      </tr>
+      {% for i in data %}
+      <tr>
+          <td>{{ i.video }}</td>
+          <td>{{ i.per }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+<br>
+<br>
+
+  <table id="customers">
+
+
+
+    <tr>
+      <td>MATERIAL</td>
+      <td><label>
+        <input type="file" name="file" />
+      </label></td>
+    </tr>
+
+
+      <tr>
+      <td>DETAILS</td>
+      <td><label>
+        <input type="text" name="fil1" />
+      </label></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="SAVE" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+<br>
+<table id="customers">
+<tr>
+    <td colspan="5" align="center"><b>Uploaded Material</b></td>
+</tr>
+
+<tr>
+      <td>SI NO </td>
+{#      <td >ID</td>#}
+      <td >PARENT INFO </td>
+      <td >DATE</td>
+      <td >DISCRIPTION</td>
+      <td>MATERIAL</td>
+    </tr>
+       {% for i in val %}
+    <tr>
+     <td>{{ forloop.counter }}</td>
+{#      <td>{{ i.id}}</td>#}
+        <td>{{ i.PARENT.name }}</td>
+      <td>{{ i.date}}</td>
+      <td>{{ i.discription}}</td>
+
+        <td><a href="{{ i.material.url }}" download="">Download</a> </td>
+{#          <img src="media/{{ i.material }}" height="100px" width="100px" alt=""/></td>#}
+
+
+
+    </tr>{% endfor %}
+
+
+
+  </table>
+</form>
+</body>
+{% endblock %}

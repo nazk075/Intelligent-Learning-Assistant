@@ -1,0 +1,34 @@
+{% extends 'EXPERT/expertindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table id="customers">
+    
+    <tr>
+      <td width="56"><div align="center">SI NO </div></td>
+      <td width="181"><div align="center">PARENT NAME </div></td>
+      <td width="106"><div align="center">CHILD NAME</div></td>
+      <td width="98"><div align="center">EMAIL</div></td>
+      <td><div align="center">PHONE NO</div></td>
+      <td><div align="center"></div></td>
+    </tr>
+       {% for i in val %}
+    <tr>
+     <td>{{ forloop.counter }}</td>
+        <td>{{ i.name}}</td>
+      <td>{{ i.child_name}}</td>
+      <td>{{ i.mail_id}}</td>
+
+      <td>{{ i.phone_no }}</td>
+          <td colspan="6"><a href="addmaterial/{{ i.id }}">Add</a> </td>
+
+
+
+    </tr>{% endfor %}
+
+
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'EXPERT/expertindex.html' %}
+{% block body %}
+
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table id="customers">
+    <tr>
+      <th width="56"><div align="center">SI NO </div></th>
+      <th width="181"><div align="center">PARENT INFO</div></th>
+      <th width="106"><div align="center">DOUBT</div></th>
+        <th width="139"><div align="center">DATE</div></th>
+        <th></th>
+
+
+    </tr>
+       {% for i in val %}
+    <tr>
+     <td>{{ forloop.counter }}</td>
+        <td>{{ i.PARENT.name}}</td>
+      <td>{{ i.doubt}}</td>
+        <td>{{ i.date}}</td>
+        <td> {% if i.reply == 'pending' %}
+       <a href="/sendreply/{{ i.id }}">Reply</a>
+    {% else  %}
+    {{ i.reply }}
+    {% endif %}
+    </td>
+
+
+
+    </tr>
+       {% endfor %}
+
+
+  </table>
+</form>
+</body>
+{% endblock %}

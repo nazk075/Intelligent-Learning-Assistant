@@ -1,0 +1,27 @@
+{% extends 'EXPERT/expertindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table id="customers">
+    <tr>
+      <td>SI NO</td>
+        <td>PARENT NAME</td>
+        <td >GUIDANCE</td>
+    </tr>
+       {% for i in val %}
+    <tr>
+     <td>{{ forloop.counter }}</td>
+        <td>{{ i.PARENT.name}}   ({{ i.PARENT.child_name }})</td>
+        <td>{{ i.guidance}}</td>
+
+
+
+
+    </tr>
+       {% endfor %}
+      <tr><td align="center" colspan="6"><a href="/addguidance#about">Add New</a></td></tr>
+  </table>
+</form>
+</body>
+{% endblock %}

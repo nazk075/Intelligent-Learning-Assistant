@@ -1,0 +1,29 @@
+{% extends 'EXPERT/expertindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/editassestmentcode">
+  <table id="customers">
+    <tr>
+      <td>PARENT</td>
+      <td><label>
+        {{ val1.PARENT.name }}
+      </label></td>
+    </tr>
+    <tr>
+      <td>REPORT</td>
+      <td><label>
+        <input type="text" name="textfield" value="{{ val1.report }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="SEND" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

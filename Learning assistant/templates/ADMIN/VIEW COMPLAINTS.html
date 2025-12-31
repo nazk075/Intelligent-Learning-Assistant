@@ -1,0 +1,45 @@
+{% extends 'ADMIN/adminindes.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/viewcomplaint_search#about">
+  <table id="customers">
+    <tr>
+      <td colspan="7">DATE
+        <label>
+        <input type="date" name="date" />
+        </label>
+          <input type="submit" name="Submit2" value="SEARCH" /></td>
+    </tr>
+    <tr>
+      <td width="57"><div align="center">SI NO </div></td>
+{#      <td width="92"><div align="center">ID</div></td>#}
+      <td width="147"><div align="center">PARENT</div></td>
+      <td width="109"><div align="center">DATE</div></td>
+      <td width="57"><div align="center">EXPERT</div></td>
+      <td width="107"><div align="center">ISSUE</div></td>
+      <td width="261">&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+     <td>{{ forloop.counter }}</td>
+{#      <td>{{ i.id }}</td>#}
+      <td>{{ i.PARENT.name }}</td>
+
+
+      <td>{{ i.date}}</td>
+      <td>{{ i.EXPERT.name}}</td>
+      <td>{{ i.issue}}</td>
+          <td>{% if i.reply == 'pending' %}<div align="center"><a href="sendreply/{{ i.id }}#about"> REPLY</a></div>{% else %}{{ i.reply }}{% endif %}</td>
+
+
+
+
+    </tr>
+      {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}
+

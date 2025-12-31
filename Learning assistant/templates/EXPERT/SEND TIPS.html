@@ -1,0 +1,23 @@
+{% extends 'EXPERT/expertindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/addtips_post">
+  <table id="customers">
+    <tr>
+      <td width="138"><div align="center">TIPS</div></td>
+      <td width="208"><label>
+      <div align="center">
+        <input type="text" name="textfield" />
+      </div>
+      </label></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><input type="submit" value="Submit" name="add"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+

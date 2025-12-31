@@ -1,0 +1,26 @@
+{% extends 'EXPERT/expertindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/">
+  <table id="customers">
+    <tr>
+      <td >SI NO </td>
+      <td>TIPS</td>
+      <td width="181"><div align="center"></div></td>
+    </tr>
+       {% for i in val %}
+    <tr>
+     <td>{{ forloop.counter }}</td>
+      <td>{{ i.tips}}</td>
+      <td><div align="center"><a href="delete/{{ i.id }}">DELETE</a></div></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="3"><div align="center"><a href="/sendtips#about" class="btn btn-warning">ADD NEW</a></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends 'ADMIN/adminindes.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/viewparents_search#about">
+  <table id="customers">
+    <tr>
+      <td colspan="7">NAME
+              <label>
+        <input type="text" name="textfield" />
+        </label>
+        <input type="submit" name="Submit2" value="SEARCH" /></td>
+    </tr>
+    <tr>
+      <td width="58"><div align="center">SI NO </div></td>
+      <td width="188"><div align="center">NAME</div></td>
+      <td width="110"><div align="center">PHONE</div></td>
+      <td width="58"><div align="center">MAIL</div></td>
+      <td width="175"><div align="center">CHILD NAME </div></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+     <td>{{ forloop.counter }}</td>
+      <td>{{ i.name }}</td>
+
+
+      <td>{{ i.phone_no}}</td>
+      <td>{{ i.mail_id}}</td>
+      <td>{{ i.child_name}}</td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
